@@ -1,0 +1,7 @@
+terraform/modules/lambda/.tmp
+terraform/.terraform
+terraform/**/*.tfvars
+terraform/**/*.tfstate
+codecommit-jira-integration/__pycache__
+lab/
+.venv/
