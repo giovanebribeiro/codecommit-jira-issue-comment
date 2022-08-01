@@ -4,10 +4,10 @@ Infraestrutura necessária na AWS para criar uma integração entre o jira e o c
 para toda vez em que um commit é realizado no repositório, é disparado um lambda que obtém a mensagem de commit, e adiciona a mensagem de commit como 
 um comentário na atividade JIRA correspondente. A infraestrutura criada corresponde a imagem abaixo:
 
-![Alt text](codecommit-jira-integration.drawio.png "a title")
+![Alt text](codecommit-jira-integration.drawio.svg "a title")
 
 Toda a infraestrutura para a integração funcionar está descrita em scripts terraform. Após a execução do script, deve-se obter o ARN do tópico SNS criado e criar um trigger no repositório 
-desejado no CodeCommit, associando-o ao tópico SNS. O tipo do trigger deve ser "Enviar para a ramificação existente". Assim, sempre que uma alteração no repositório for enviada para origin, o trigger é disparado e o lambda inicia sua execução. O tópico pode ser reaproveitado em outras triggers de repositório.
+desejado no CodeCommit, associando-o ao tópico SNS. O tipo do trigger deve ser "Enviar para a ramificação existente". Assim, sempre que uma alteração no repositório for enviada para origin, o trigger é disparado e o lambda inicia sua execução. O tópico SNS pode ser reaproveitado em outras triggers de repositório.
 
 O lambda foi desenvolvido para reconhecer apenas mensagens de commit utilizando o padrão [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0-beta.2/). Qualquer commit fora deste padrão gerará uma exceção na execução do lambda. No escopo da mensagem, deve ser adicionado o ID da issue jira no qual o comentário será adicionado. Caso o escopo não seja passado, a mensagem é reconhecida mas o comentário não é escrito. Exemplo:
 

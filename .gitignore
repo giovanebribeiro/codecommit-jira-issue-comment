@@ -2,6 +2,8 @@ terraform/modules/lambda/.tmp
 terraform/.terraform
 terraform/**/*.tfvars
 terraform/**/*.tfstate
+terraform/workspaces/*.tfstate
+terraform/workspaces/*.tfvars
 codecommit-jira-integration/__pycache__
 lab/
 .venv/

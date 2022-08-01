@@ -1,0 +1,25 @@
+/*
+ * Este arquivo é um template para que sejam criados arquivos de variáveis
+ * para o terraform customizados para cada workspace e/ou ambiente de deploy.
+ * Para utilizar este arquivo, basta criar uma cópia deste arquivo, renomeando
+ * o arquivo para o nome desejado (indicamos que o nome do arquivo seja o mesmo nome do
+ * workspace/tfstate), mantendo a extensão como "tfvars". Lembrando que arquivos tfvars,
+ * assim como arquivos tfstate, são ignorados por este repositório git.
+ *
+ * Em seguida, basta preencher os valores das variáveis de acordo com a necessidade.
+ * As variáveis listadas este template são de preenchimento obrigatório, mas qualquer
+ * variável pode ser preenchida aqui. O terraform prioriza os valores dos arquivos tfvars
+ * em detrimento dos valores default das variáveis.
+ *
+ * OBS: Para uma descrição das variáveis juntamente com os valores default, caso existam,
+ * consultar o arquivo variables.tf principal.
+ */
+
+aws_bucket_tfstates			= ""
+
+#
+# Variáveis não obrigatórias. O valor presente aqui substituirá o valor default, presente no arquivo variables.tf
+#
+
+#region   					    = "us-east-1"
+#aws_profile					    = "us-east-1"
